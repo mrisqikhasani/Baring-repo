@@ -20,4 +20,4 @@ const createConnection = async () => {
   }
 };
 
-module.exports = createConnection;
+  module.exports = { createConnection };
