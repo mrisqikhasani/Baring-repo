@@ -19,5 +19,22 @@ const getMovieModels = async () => {
   }
 };
 
+// getMovieId
+const getMovieByIdModels = async (movieId) => {
+  try {
+    const connection = await createConnection();
 
-module.exports = { getMovieModels }
+    const [results] = await connection.query(
+      "SELECT * FROM movies WHERE movie_id = ?",
+      [movieId]
+    );
+
+    connection.end();
+
+    return results.length > 0 ? results[0] : null;
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = { getMovieModels, getMovieByIdModels };

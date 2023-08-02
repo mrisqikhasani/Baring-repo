@@ -1,14 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { createUserController, loginUserController } = require("../controllers/userController.js")
-const { getMovieController } = require("../controllers/movieController.js")
+const { getMovieController, getMovieByIdController } = require("../controllers/movieController.js")
 
 // Get Home
 router.get('/', (req, res, next) => {
     res.json("Hello this is backend Baring")
 })
-
-// router.get('/users', getUser)
 
 // register
 router.post('/register', createUserController);
@@ -17,6 +15,9 @@ router.post('/register', createUserController);
 router.post("/login", loginUserController);
 
 // get movies 
-router.get('/movies', getMovieController);
+// router.get('/movies', getMovieController);
+
+// get movies by id
+router.get('/movies/:id', getMovieByIdController);
 
 module.exports = router;
