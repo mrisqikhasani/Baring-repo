@@ -72,4 +72,27 @@ const postMovieModels = async (dataMovie) => {
   }
 };
 
-module.exports = { getMovieModels, getMovieByIdModels, postMovieModels };
+// put update movies
+const updateMoviesModels = async (movieId, newData) => {
+  try {
+    const connection = await createConnection();
+
+    const [result] = await connection.query(
+      "UPDATE movies SET ? WHERE movie_id = ?",
+      [newData, movieId]
+    );
+
+    connection.end();
+
+    return result.affectedRows > 0;
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = {
+  getMovieModels,
+  getMovieByIdModels,
+  postMovieModels,
+  updateMoviesModels,
+};

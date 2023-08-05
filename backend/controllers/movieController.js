@@ -44,8 +44,30 @@ const postMovieController = async (req, res, next) => {
   }
 };
 
+// put update movie
+const updateMovieController = async(req, res, next) => {
+  const movieId = req.params.id;
+  const newData = req.body;
+
+  try {
+    const isUpdated = await moviesModels.updateMoviesModels(movieId, newData);
+
+    if(!isUpdated) {
+      return res.status(404).json({ message: "Movie not found or data unchanged"});
+    }
+
+    // if data update successfully, return success
+    res.status(200).json({ message: 'Movie update Sucessfulyy'});
+
+  } catch (error) {
+    console.log('Error updating Movie:', error.message)
+    res.status(500).json({ error: "Failed to update movie"})
+  }
+}
+
 module.exports = {
-  getMovieController,
   getMovieByIdController,
+  getMovieController,
   postMovieController,
+  updateMovieController
 };
