@@ -41,6 +41,7 @@ const createUserModels = async (userData) => {
     throw error;
   }
 };
+
 // Login user
 const loginUserModels = async (userData) => {
   try {
@@ -76,4 +77,52 @@ const loginUserModels = async (userData) => {
   }
 };
 
-module.exports = { createUserModels, loginUserModels };
+// Update user
+const updateUserModels = async (userId, newData) => {
+  try {
+    const connection = await createConnection();
+
+    // check is change in password or not
+    if (newData.password) {
+      // encryption new password
+      const hashedPassword = await bcrypt.hash(newData.password, 10);
+      newData.password = hashedPassword;
+    }
+
+    const [result] = await connection.query(
+      "UPDATE users SET ? WHERE idUsers = ?",
+      [newData, userId]
+    );
+
+    connection.end();
+
+    return result.affectedRows > 0;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Delete user
+const deleteUserModels = async (userId) => {
+  try {
+    const connection = await createConnection();
+
+    const [result] = await connection.query(
+      "DELETE FROM users WHERE idusers = ?",
+      [userId]
+    );
+
+    connection.end();
+
+    return result.affectedRows > 0;
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = {
+  createUserModels,
+  loginUserModels,
+  updateUserModels,
+  deleteUserModels,
+};
