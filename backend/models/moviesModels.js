@@ -37,4 +37,39 @@ const getMovieByIdModels = async (movieId) => {
   }
 };
 
-module.exports = { getMovieModels, getMovieByIdModels };
+// create post movie
+const postMovieModels = async (dataMovie) => {
+  try {
+    const connection = await createConnection();
+
+    const [results] = await connection.query(
+      `INSERT INTO movies VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      [
+        dataMovie.movie_id,
+        dataMovie.movie_title,
+        dataMovie.img,
+        dataMovie.img_title,
+        dataMovie.imgsm,
+        dataMovie.desc,
+        dataMovie.trailer,
+        dataMovie.video,
+        dataMovie.year,
+        dataMovie.limit,
+        dataMovie.genre,
+        dataMovie.isSeries,
+      ]
+    );
+
+    connection.end();
+
+    return {
+      movie_id: dataMovie.movie_id,
+      movie_title: dataMovie.movie_title,
+      img: dataMovie.img,
+    };
+  } catch (error) {
+    throw error;
+  }
+};
+
+module.exports = { getMovieModels, getMovieByIdModels, postMovieModels };

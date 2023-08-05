@@ -8,5 +8,5 @@ app.use(express.json());
 app.use(routers)
 
 app.listen(port, ()=>{
-    console.log(`Server is runnning on http://localhost${port}`);
+    console.log(`Server is runnning on http://localhost:${port}`);
 })

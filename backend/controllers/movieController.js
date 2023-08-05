@@ -30,4 +30,22 @@ const getMovieByIdController = async (req, res, next) => {
   }
 };
 
-module.exports = { getMovieController, getMovieByIdController };
+// post the movie
+const postMovieController = async (req, res, next) => {
+  try {
+    dataMovie = req.body;
+
+    const movie = await moviesModels.postMovieModels(dataMovie);
+
+    res.status(201).json({ message: "The movie created", data: movie });
+  } catch (error) {
+    console.log("Error post Movie", error.message);
+    res.status(400).json({ error: error.message });
+  }
+};
+
+module.exports = {
+  getMovieController,
+  getMovieByIdController,
+  postMovieController,
+};
