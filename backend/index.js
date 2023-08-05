@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const routers = require('./routes/routes.js')
+const routers = require('./routes')
 // const connection = require('./db.js')
 
 app.use(express.json());

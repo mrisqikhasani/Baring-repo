@@ -65,9 +65,29 @@ const updateMovieController = async(req, res, next) => {
   }
 }
 
+// Delete the movies
+const deleteMovieController = async (req, res, next) => {
+  movieId = request.params.id;
+
+  try {
+    const isDeleted = await moviesModels.deleteMoviesModels(movieId);
+
+    if (!isDeleted) {
+      return res.status(404).json({ message: 'Movie not found'});
+    }
+
+    res.status(200).json({ message: 'Movie deleted succesfully'})
+
+  } catch (error){
+    console.log("Error when delete", error.message);
+    res.status(500).json({ error: "Failed to delete movie"})
+  }
+}
+
 module.exports = {
   getMovieByIdController,
   getMovieController,
   postMovieController,
-  updateMovieController
+  updateMovieController,
+  deleteMovieController
 };

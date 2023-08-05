@@ -36,8 +36,8 @@ const getMovieByIdModels = async (movieId) => {
     throw error;
   }
 };
-
 // create post movie
+
 const postMovieModels = async (dataMovie) => {
   try {
     const connection = await createConnection();
@@ -90,9 +90,27 @@ const updateMoviesModels = async (movieId, newData) => {
   }
 };
 
+// Delete the movies
+const deleteMoviesModels = async(movieId) => {
+  try {
+    const connection = await createConnection();
+
+    const [ result ] = await connection.query("DELETE FROM movies WHERE movie_id = ?",
+    [movieId])
+
+    connection.end();
+
+    return result.affectedRows > 0;
+
+  } catch(error) {
+    throw error;
+  }
+}
+
 module.exports = {
   getMovieModels,
   getMovieByIdModels,
   postMovieModels,
   updateMoviesModels,
+  deleteMoviesModels
 };
