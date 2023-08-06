@@ -1,4 +1,4 @@
-const { createConnection } = require("../db.js");
+const { createConnection } = require("../config/db.js");
 const bcrypt = require("bcryptjs");
 const Joi = require("joi");
 
@@ -8,9 +8,31 @@ const validateUser = (user) => {
     email: Joi.string().email().required(),
     password: Joi.string().required(),
     profilePic: Joi.string(),
+    isAdmin: Joi.number(),
   });
 
   return schema.validate(user);
+};
+
+// get all the user
+const getAllUsersModels = async () => {
+  try {
+    const connection = await createConnection();
+
+    const [results] = await connection.query(
+      "SELECT idusers, username, email, profilePic, isAdmin FROM users"
+    );
+
+    connection.end();
+
+    if (results.length == 0) {
+      throw error("Users not found");
+    }
+
+    return results;
+  } catch (error) {
+    throw error;
+  }
 };
 
 // Register user
@@ -56,7 +78,7 @@ const loginUserModels = async (userData) => {
 
     // Check user
     if (results.length == 0) {
-      throw new Error("Invalid email or password");
+      throw new Error("User not found");
     }
 
     // compare the password with encryption
@@ -71,7 +93,13 @@ const loginUserModels = async (userData) => {
     }
 
     // return data user if login sucessfulyy
-    return { name: user.username, email: user.email };
+    return {
+      id: user.idusers,
+      name: user.username,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    };
+    // return results;
   } catch (error) {
     throw error;
   }
@@ -121,6 +149,7 @@ const deleteUserModels = async (userId) => {
 };
 
 module.exports = {
+  getAllUsersModels,
   createUserModels,
   loginUserModels,
   updateUserModels,

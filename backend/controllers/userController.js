@@ -1,4 +1,21 @@
 const userModel = require("../models/userModels.js");
+const jwt = require("jsonwebtoken");
+
+// show the all user
+const getAllUsersContoller = async (req, res, next) => {
+  try {
+    const dataUser = await userModel.getAllUsersModels();
+
+    if (!dataUser) {
+      res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({ message: "Getting sucessfully", dataUser });
+  } catch (error) {
+    console.log("Error when getting the user", error.message);
+    res.status(500).json({});
+  }
+};
 
 // REGISTER
 const createUserController = async (req, res, next) => {
@@ -22,7 +39,19 @@ const loginUserController = async (req, res, next) => {
   try {
     const user = await userModel.loginUserModels(loginUser);
 
-    res.status(200).json({ message: "Login is Successfully", user });
+    const token =
+      "Bearer " +
+      jwt.sign(
+        {
+          id: user.id,
+        },
+        process.env.SECRET_KEY,
+        {
+          expiresIn: 86400,
+        }
+      );
+
+    res.status(200).json({ message: "Login is Successfully", token });
   } catch (error) {
     console.log("Error during login:", error.message);
     res.status(401).json({ error: error.message });
@@ -49,26 +78,26 @@ const updateUserController = async (req, res, next) => {
 };
 
 // Delete user by admin
-const deleteUserController = async(req, res, next) => {
+const deleteUserController = async (req, res, next) => {
   const { id } = req.params;
   try {
     const isDeleted = await userModel.deleteUserModels(id);
-    
-    if(!isDeleted){
-      return res.status(404).json({message: "User not found"})
+
+    if (!isDeleted) {
+      return res.status(404).json({ message: "User not found" });
     }
 
-    res.status(200).json({message: "User deleted Sucessfully"})
-
+    res.status(200).json({ message: "User deleted Sucessfully" });
   } catch (error) {
     console.log("Error when delete user", error.message);
-    res.status(500).json({ error: "Failed the deleted user"})
+    res.status(500).json({ error: "Failed the deleted user" });
   }
-}
+};
 
 module.exports = {
+  getAllUsersContoller,
   createUserController,
   loginUserController,
   updateUserController,
-  deleteUserController
+  deleteUserController,
 };

@@ -1,4 +1,4 @@
-const { createConnection } = require("../db.js");
+const { createConnection } = require("../config/db.js");
 
 // getMovie
 const getMovieModels = async () => {
