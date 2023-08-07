@@ -3,7 +3,13 @@ const moviesModels = require("../models/moviesModels.js");
 // get movie all
 const getMovieController = async (req, res, next) => {
   try {
-    const movie = await moviesModels.getMovieModels();
+    const limit = parseInt(req.params.limit) || 10 ;
+    const page = parseInt(req.params.page) || 1;
+
+    // menghitung offset
+    const offset = (page - 1) * limit;
+
+    const movie = await moviesModels.getMoviesWithLimit(offset, limit);
 
     res.status(200).json({ message: "Get Movies Succesfully", movie });
   } catch (error) {

@@ -39,9 +39,7 @@ const loginUserController = async (req, res, next) => {
   try {
     const user = await userModel.loginUserModels(loginUser);
 
-    const token =
-      "Bearer " +
-      jwt.sign(
+    const token = "Bearer " + jwt.sign(
         {
           id: user.id,
         },

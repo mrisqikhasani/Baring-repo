@@ -19,6 +19,21 @@ const getMovieModels = async () => {
   }
 };
 
+// get movie with limit and pages
+const getMoviesWithLimit = async (offset, limit) => {
+  try {
+    const connection = await createConnection();
+
+    const [ results ] = await connection.query('SELECT * FROM movies LIMIT ?, ?', 
+    [offset, limit]);
+
+    return results;
+
+  } catch (error) {
+    throw error;
+  }
+}
+
 // getMovieId
 const getMovieByIdModels = async (movieId) => {
   try {
@@ -109,6 +124,7 @@ const deleteMoviesModels = async(movieId) => {
 
 module.exports = {
   getMovieModels,
+  getMoviesWithLimit,
   getMovieByIdModels,
   postMovieModels,
   updateMoviesModels,

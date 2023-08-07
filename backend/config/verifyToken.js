@@ -6,7 +6,6 @@ dotenv.config();
 
 const verifyToken = (req, res, next) => {
   const tokenHeader = req.headers["x-access-token"];
-  console.log(tokenHeader);
 
   if (tokenHeader.split(" ")[0] !== "Bearer") {
     return res.status(500).send({

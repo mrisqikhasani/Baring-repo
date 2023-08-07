@@ -48,8 +48,8 @@ const createUserModels = async (userData) => {
 
     // query create by email and password
     const [results] = await connection.query(
-      "INSERT INTO users(`username`, `email`, `password`) VALUES (?, ?, ?)",
-      [userData.username, userData.email, hashedPassword]
+      "INSERT INTO users(`username`, `email`, `password`, `isAdmin`) VALUES (?, ?, ?, ?)",
+      [userData.username, userData.email, hashedPassword, userData.isAdmin]
     );
 
     connection.end();

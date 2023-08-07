@@ -20,7 +20,7 @@ router.get(
 // register
 router.post("/register", createUserController);
 
-// login
+// login  
 router.post("/login", loginUserController);
 
 // update
