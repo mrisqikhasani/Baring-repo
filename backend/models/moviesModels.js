@@ -51,7 +51,20 @@ const getMovieByIdModels = async (movieId) => {
     throw error;
   }
 };
-// create post movie
+
+// Search by query 
+const searchMoviesByQuery = async (query) => {
+  try {
+    const connection = await createConnection();
+
+    const [ result ] = await connection.query("SELECT * FROM movies WHERE movie_title LIKE ? ", 
+    [`%${query}%`])
+
+    return result
+  } catch(error) {
+    throw error;
+  }
+}
 
 const postMovieModels = async (dataMovie) => {
   try {
@@ -126,6 +139,7 @@ module.exports = {
   getMovieModels,
   getMoviesWithLimit,
   getMovieByIdModels,
+  searchMoviesByQuery,
   postMovieModels,
   updateMoviesModels,
   deleteMoviesModels

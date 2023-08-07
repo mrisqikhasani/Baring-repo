@@ -15,7 +15,7 @@ const getMovieController = async (req, res, next) => {
   } catch (error) {
     console.log("Error getting movies", error.message);
     res.status(404).json({ error: error.message });
-  }
+  } 
 };
 
 // get movie by id controller
@@ -35,6 +35,20 @@ const getMovieByIdController = async (req, res, next) => {
     res.status(404).json({ error: error.message });
   }
 };
+
+// search by query
+const searchMovieByQueryController = async (req, res, next) => {
+  try {
+    const searchQuery = req.query.query || '';
+
+    const movies = await moviesModels.searchMoviesByQuery(searchQuery);
+    
+    res.json(movies);
+
+  } catch(error){
+    req.status(500).json({ error: "Failed to Search Movie"})
+  }
+}
 
 // post the movie
 const postMovieController = async (req, res, next) => {
@@ -93,6 +107,7 @@ const deleteMovieController = async (req, res, next) => {
 module.exports = {
   getMovieByIdController,
   getMovieController,
+  searchMovieByQueryController,
   postMovieController,
   updateMovieController,
   deleteMovieController
