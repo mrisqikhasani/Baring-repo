@@ -20,7 +20,6 @@ router.get("/movies/search", verify.verifyToken, searchMovieByQueryController)
 // get movies by id
 router.get("/movies/:id", verify.verifyToken, getMovieByIdController);
 
-
 // post the movies
 router.post("/movies", [verify.verifyToken, verify.verifyisAdmin], postMovieController);
 
