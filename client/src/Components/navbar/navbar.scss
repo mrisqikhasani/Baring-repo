@@ -1,0 +1,58 @@
+*{
+    list-style: none;
+    text-decoration: none;
+}
+
+.logo{
+    display: flex;
+    color: #DB0000;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 45px;
+    font-weight: 600;
+    font-style: normal; 
+    line-height: normal;
+    text-shadow:  -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-display: inline-block;
+    cursor: pointer;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 120px;
+    background-color: #212121;
+}
+
+.navList {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: -210px;
+}
+
+.navList li {
+    margin-right: 24px
+
+}
+
+.navList a{
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.iconList {
+    display: flex;
+}
+
+.iconList a{
+    margin-left: 24px;
+    color: white;
+}
+
+.line {
+    width: 100%;
+    border-top: 5px solid #564D4D;
+}
