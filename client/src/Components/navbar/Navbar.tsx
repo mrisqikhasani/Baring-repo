@@ -1,11 +1,13 @@
 import Search from "@mui/icons-material/Search";
 import Notifications from "@mui/icons-material/Notifications";
 import Account from "@mui/icons-material/AccountCircle";
+import Container from '@mui/material/Container';
 import "./navbar.scss";
 
 function Navbar() {
   return (
     <div>
+      <Container maxWidth="lg">
       <nav>
           <a href="/" className="logo">
             Baring
@@ -35,23 +37,25 @@ function Navbar() {
           <ul className="iconList">
             <li>
               <a href="/">
-                <Search sx={{ fontSize: 35 }} />
+                <Search sx={{ fontSize: 35 }}  className="iconButton"/>
               </a>
             </li>
             <li>
               <a href="/">
-                <Notifications sx={{ fontSize: 35 }} />
+                <Notifications sx={{ fontSize: 35 }} className="iconButton"/>
               </a>
             </li>
             <li>
               <a href="/">
-                <Account sx={{ fontSize: 35 }} />
+                <Account sx={{ fontSize: 35 }} className="iconButton"/>
               </a>
             </li>
           </ul>
       </nav>
+      </Container>
       <div className="line"></div>
     </div>
+    
   );
 }
 

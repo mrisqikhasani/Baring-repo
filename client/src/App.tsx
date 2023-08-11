@@ -1,11 +1,13 @@
 import Navbar from './Components/navbar/Navbar';
+import Footer from './Components/footer/Footer';
 import "./App.scss"
 
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
+      <Footer />
     </div>
   );
 }

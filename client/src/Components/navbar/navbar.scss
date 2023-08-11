@@ -16,25 +16,24 @@
     cursor: pointer;
 }
 
+.logo:hover {
+    color: #FFF;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 120px;
-    background-color: #212121;
+    padding: 10px 0px;
+    // background-color: #212121;
+    background-color:transparent;
 }
 
 .navList {
-    display: flex;
-    list-style: none;
+    display: flex;    
+    gap: 24px;
     margin: 0;
     padding: 0;
-    margin-left: -210px;
-}
-
-.navList li {
-    margin-right: 24px
-
 }
 
 .navList a{
@@ -43,16 +42,56 @@ nav {
     font-weight: 500;
 }
 
+.navList a:hover {
+    color: #DB0000;
+    text-shadow: 1px 1px 2px black;;
+}
+
 .iconList {
     display: flex;
+    gap: 15px;
+    // margin-left: 5px ;
 }
 
 .iconList a{
-    margin-left: 24px;
     color: white;
+}
+
+.iconList a:hover {
+    color: #DB0000;
+    text-shadow: 1px 1px 2px black;;
 }
 
 .line {
     width: 100%;
     border-top: 5px solid #564D4D;
+}
+
+
+@media (max-width: 768px) {
+    .logo {
+        margin-bottom: 10px;
+    }
+    
+    .navList {
+        display: none;
+      margin-left: 0;
+      margin-bottom: 10px;
+    }
+  
+    .navList li {
+      margin-right: 0;
+      margin-bottom: 6px;
+    }
+  }
+
+@media (max-width: 425px) {
+    nav{
+        padding: 10px 15px;
+    }
+
+    .iconList{
+        gap: 5px;
+    }
+    
 }
