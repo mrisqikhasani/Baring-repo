@@ -1,0 +1,28 @@
+[
+    {
+        "id":1,
+        "movie_title": "Zom 100: Bucket List of the Dead",
+        "year": "2023",
+        "imageUrl": "Trending/Trending 1.png"
+    },
+    {
+        "id":2,
+        "movie_title": "Spider-Man: Across the Spider-Verse",
+        "year": "2023",
+        "imageUrl": "Trending/Trending 2.png"
+    },
+    {
+        "id":3,
+        "movie_title": "Oppenheimer",
+        "year": "2023",
+        "imageUrl": "Trending/Trending 3.png"
+
+    },
+    {
+        "id":4,
+        "movie_title": "Barbie",
+        "year": "2023",
+        "imageUrl": "Trending/Trending 4.png"
+
+    }
+]

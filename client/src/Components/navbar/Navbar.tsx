@@ -54,6 +54,7 @@ function Navbar() {
       </nav>
       </Container>
       <div className="line"></div>
+      <br />
     </div>
     
   );
