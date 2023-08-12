@@ -1,0 +1,89 @@
+.box-item {
+    border: 0px none;
+    height: 340px;
+    // overflow-x: hidden;
+    position: relative;
+    width: 194px;
+    margin-left: 13px;
+    height: 380px;
+}
+
+.box-item .poster {
+    left: 0;
+    // position: fixed;
+    top: 0;
+  }
+
+.box-item .overplap-poster {
+    height: 274px;
+    left: 2px;
+    position: absolute;
+    top: 0;
+    width: 185px;
+}
+
+.box-item img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+}
+
+.box-item .badge{
+    height: 22px;
+    left: 95px;
+    position: absolute;
+    top: 0;
+    width: 90px;
+}
+
+.box-item .overplap-badge{
+    background-color: #db0000;
+  border-radius: 0px 15px 0px 15px;
+  height: 22px;
+  position: relative;
+  width: 88px;
+}
+
+.box-item .text-wrap {
+    color: #ffffff;;
+  font-size: 15px;
+  font-weight: 500;
+  height: 18px;
+  left: 23px;
+  letter-spacing: 0;
+  line-height: normal;
+  position: absolute;
+  text-shadow: 0px 4px 4px #00000040;
+  top: 0;
+  white-space: nowrap;
+}
+
+.title-poster h3{
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    height: 22px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    top: 293px;
+    left: 0;
+    // white-space: nowrap;
+    // overflow: hidden;
+//   text-overflow: ellipsis
+}
+
+.title-poster p{
+    display: flex;
+    color:#ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    height: 15px;
+    left: 0;
+    letter-spacing: 0;
+    line-height: normal;
+    position: relative;
+    top: 318px;
+}

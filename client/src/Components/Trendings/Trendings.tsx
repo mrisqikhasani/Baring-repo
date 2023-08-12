@@ -15,14 +15,13 @@ function Trendings() {
   return (
     <>
       <div className="Trendings">
-        <Container>
+        <Container maxWidth='xl'>
           <div className="title-trendings">
             <h2 className="text-white mt-14 mb-10">Trendings</h2>
           </div>
           <AliceCarousel
             mouseTracking
             responsive={responsive} 
-            // items={items}
             disableDotsControls
             autoPlay={true}
             autoPlayInterval={3000}

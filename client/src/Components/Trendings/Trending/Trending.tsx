@@ -1,5 +1,4 @@
 import "./trending.scss";
-const gambar = require("../../../Assets/Trending/Trending 1.png");
 
 export default function Trending({movie}: {movie:any}) {
   return (
