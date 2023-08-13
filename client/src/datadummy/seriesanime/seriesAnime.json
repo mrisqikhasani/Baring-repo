@@ -1,0 +1,45 @@
+[
+    {
+      "id": 17,
+      "movie_title": "Demon Slayer: Kimetsu no Yaiba",
+      "year": "2019",
+      "imageUrl": "Anime/anime1.png",
+      "isSeries":1
+    },
+    {
+      "id": 18,
+      "movie_title": "One Piece",
+      "year": "1999",
+      "imageUrl": "Anime/anime2.png",
+      "isSeries":1
+    },
+    {
+      "id": 19,
+      "movie_title": "Attack On Titan",
+      "year": "2013",
+      "imageUrl": "Anime/anime3.png",
+      "isSeries":1
+    },
+    {
+      "id": 20,
+      "movie_title": "Naruto Shippuden",
+      "year": "2017",
+      "imageUrl": "Anime/anime4.png",
+      "isSeries":1
+    },
+    {
+      "id": 21,
+      "movie_title": "Hunter X Hunter",
+      "year": "2011",
+      "imageUrl": "Anime/anime5.png",
+      "isSeries":1
+    },
+    {
+      "id": 22,
+      "movie_title": "SPY X FAMILY",
+      "year": "2022",
+      "imageUrl": "Anime/anime6.png",
+      "isSeries":1
+    }
+  ]
+  

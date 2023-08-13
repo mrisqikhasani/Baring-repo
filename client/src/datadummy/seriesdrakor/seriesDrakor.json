@@ -1,0 +1,45 @@
+[
+    {
+      "id": 23,
+      "movie_title": "Big Mouth",
+      "year": "2022",
+      "imageUrl": "Drakor/drakor1.png",
+      "isSeries":1
+    },
+    {
+      "id": 24,
+      "movie_title": "Itaewon Class",
+      "year": "2020",
+      "imageUrl": "Drakor/drakor2.png",
+      "isSeries":1
+    },
+    {
+      "id": 25,
+      "movie_title": "Start-Up",
+      "year": "2020",
+      "imageUrl": "Drakor/drakor3.png",
+      "isSeries":1
+    },
+    {
+      "id": 26,
+      "movie_title": "Money Heist: Korea-Joint Economic Area",
+      "year": "2022",
+      "imageUrl": "Drakor/drakor4.png",
+      "isSeries":1
+    },
+    {
+      "id": 27,
+      "movie_title": "Sweet Home",
+      "year": "2020",
+      "imageUrl": "Drakor/drakor5.png",
+      "isSeries":1
+    },
+    {
+      "id": 28,
+      "movie_title": "All of Us Are Dead",
+      "year": "2022",
+      "imageUrl": "Drakor/drakor6.png",
+      "isSeries":1
+    }
+  ]
+  

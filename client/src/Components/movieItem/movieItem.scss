@@ -1,16 +1,13 @@
 .box-item {
     border: 0px none;
-    height: 340px;
-    // overflow-x: hidden;
+    height: 380px;
     position: relative;
     width: 194px;
     margin-left: 13px;
-    height: 380px;
 }
 
 .box-item .poster {
     left: 0;
-    // position: fixed;
     top: 0;
   }
 
@@ -62,7 +59,7 @@
 
 .title-poster h3{
     color: #ffffff;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     height: 22px;
     letter-spacing: 0;
@@ -78,7 +75,7 @@
 .title-poster p{
     display: flex;
     color:#ffffff;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 500;
     height: 15px;
     left: 0;

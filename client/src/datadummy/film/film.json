@@ -1,0 +1,44 @@
+[
+  {
+    "id": 5,
+    "movie_title": "Mavka: The Forest Song",
+    "year": "2023",
+    "imageUrl": "Film/film1.png",
+    "isSeries":0
+  },
+  {
+    "id": 6,
+    "movie_title": "The Roundup: No WayOut",
+    "year": "2023",
+    "imageUrl": "Film/film2.png",
+    "isSeries":0
+  },
+  {
+    "id": 7,
+    "movie_title": "Kingdom 3: The Flame of Fate",
+    "year": "2023",
+    "imageUrl": "Film/film3.png",
+    "isSeries":0
+  },
+  {
+    "id": 8,
+    "movie_title": "Suzume",
+    "year": "2022",
+    "imageUrl": "Film/film4.png",
+    "isSeries":0
+  },
+  {
+    "id": 9,
+    "movie_title": "20th Century Girl",
+    "year": "2022",
+    "imageUrl": "Film/film5.png",
+    "isSeries":0
+  },
+  {
+    "id": 10,
+    "movie_title": "Your Name",
+    "year": "2016",
+    "imageUrl": "Film/film6.png",
+    "isSeries":0
+  }
+]

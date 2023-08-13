@@ -1,0 +1,45 @@
+[
+    {
+      "id": 11,
+      "movie_title": "Money Heist",
+      "year": "2016",
+      "imageUrl": "Series/series1.png",
+      "isSeries":1
+    },
+    {
+      "id": 12,
+      "movie_title": "Running Man",
+      "year": "2010",
+      "imageUrl": "Series/series2.png",
+      "isSeries":1
+    },
+    {
+      "id": 13,
+      "movie_title": "Wednesday",
+      "year": "2022",
+      "imageUrl": "Series/series3.png",
+      "isSeries":1
+    },
+    {
+      "id": 14,
+      "movie_title": "The Last of Us",
+      "year": "2022",
+      "imageUrl": "Series/series4.png",
+      "isSeries":1
+    },
+    {
+      "id": 15,
+      "movie_title": "The Queen's Gambit",
+      "year": "2020",
+      "imageUrl": "Series/series5.png",
+      "isSeries":1
+    },
+    {
+      "id": 16,
+      "movie_title": "Gravity Falls",
+      "year": "2012",
+      "imageUrl": "Series/series6.png",
+      "isSeries":1
+    }
+  ]
+  
