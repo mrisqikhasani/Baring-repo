@@ -15,10 +15,11 @@ interface Movie {
 }
 
 interface SectionMovierops {
-  title: string;
+  title?: string;
   moviesdata: Movie[];
   isCarousel: boolean;
   showButtonline?: boolean;
+  seeMore: boolean;
 }
 
 const SectionMovie: React.FC<SectionMovierops> = ({
@@ -26,6 +27,7 @@ const SectionMovie: React.FC<SectionMovierops> = ({
   moviesdata,
   isCarousel = false,
   showButtonline = false,
+  seeMore = false,
 }) => {
   const responsive = {
     0: { items: 1 },
@@ -41,11 +43,13 @@ const SectionMovie: React.FC<SectionMovierops> = ({
         <div className="title-section">
           <h2 className="text-white mt-5 ">{title}</h2>
         </div>
-        <div className="see-more">
-          <a href="/">
-            See More <ArrowForwardIosIcon />
-          </a>
-        </div>
+        {seeMore && (
+          <div className="see-more">
+            <a href="/">
+              See More <ArrowForwardIosIcon />
+            </a>
+          </div>
+        )}
         {isCarousel ? (
           <AliceCarousel
             mouseTracking
@@ -63,7 +67,7 @@ const SectionMovie: React.FC<SectionMovierops> = ({
             ))}
           </AliceCarousel>
         ) : (
-          <Grid container spacing={2} columns={12} className="movie-grid">
+          <Grid container spacing={1} columns={12} className="movie-grid">
             {moviesdata.map((movieitem) => (
               <Grid item>
                 <MovieItem moviesdata={movieitem} />

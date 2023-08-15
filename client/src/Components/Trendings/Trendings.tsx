@@ -17,7 +17,7 @@ function Trendings() {
       <div className="Trendings">
         <Container maxWidth='xl'>
           <div className="title-trendings">
-            <h2 className="text-white mt-14 mb-10">Trendings</h2>
+            <h2 className="text-white mt-1 mb-10">Trendings</h2>
           </div>
           <AliceCarousel
             mouseTracking

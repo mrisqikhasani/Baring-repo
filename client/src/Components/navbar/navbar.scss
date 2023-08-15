@@ -1,97 +1,145 @@
-*{
-    list-style: none;
-    text-decoration: none;
+* {
+  list-style: none;
+  text-decoration: none;
 }
 
-.logo{
-    display: flex;
-    color: #DB0000;
-    font-family: 'Fredoka', sans-serif;
-    font-size: 45px;
-    font-weight: 600;
-    font-style: normal; 
-    line-height: normal;
-    text-shadow:  -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-    font-display: inline-block;
-    cursor: pointer;
+.logo {
+  display: flex;
+  color: #db0000;
+  font-family: "Fredoka", sans-serif;
+  font-size: 45px;
+  font-weight: 600;
+  font-style: normal;
+  line-height: normal;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+  font-display: inline-block;
+  cursor: pointer;
 }
 
 .logo:hover {
-    color: #FFF;
+  color: #fff;
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0px;
-    // background-color: #212121;
-    background-color:transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+  // background-color: #212121;
+  background-color: transparent;
 }
 
 .navList {
-    display: flex;    
-    gap: 24px;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
 }
 
-.navList a{
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 500;
+.navList a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 .navList a:hover {
-    color: #DB0000;
-    text-shadow: 1px 1px 2px black;;
+  color: #db0000;
+  text-shadow: 1px 1px 2px black;
 }
 
 .iconList {
-    display: flex;
-    gap: 15px;
-    // margin-left: 5px ;
+  display: flex;
+  gap: 15px;
+  // margin-left: 5px ;
 }
 
-.iconList a{
-    color: white;
+.iconList div {
+  color: white;
 }
 
-.iconList a:hover {
-    color: #DB0000;
-    text-shadow: 1px 1px 2px black;;
+.icon-item {
+  color: white;
 }
+
+.icon-item:hover {
+  color: #db0000;
+  text-shadow: 1px 1px 2px black;
+}
+
+.iconList div:hover {
+  color: #db0000;
+  text-shadow: 1px 1px 2px black;
+}
+
+.search-wrapper {
+  display: none;
+}
+
+
+.search-wrapper.active {
+  display: block;
+  animation: slideIn 0.3s ease-in-out forwards;
+}
+
+.search-input {
+  padding: 0 10px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.search-input:focus {
+  width: 100%; 
+  // outline: ;
+}
+
+.iconButton {
+  cursor: pointer;
+}
+
+
 
 .line {
-    width: 100%;
-    border-top: 5px solid #564D4D;
+  width: 100%;
+  border-top: 5px solid #564d4d;
 }
 
-
 @media (max-width: 768px) {
-    .logo {
-        margin-bottom: 10px;
-    }
-    
-    .navList {
-        display: none;
-      margin-left: 0;
-      margin-bottom: 10px;
-    }
-  
-    .navList li {
-      margin-right: 0;
-      margin-bottom: 6px;
-    }
+  .logo {
+    margin-bottom: 10px;
   }
 
-@media (max-width: 425px) {
-    nav{
-        padding: 10px 15px;
-    }
+  .navList {
+    display: none;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
 
-    .iconList{
-        gap: 5px;
-    }
-    
+  .navList li {
+    margin-right: 0;
+    margin-bottom: 6px;
+  }
+}
+
+@media (max-width: 425px) {
+  nav {
+    padding: 10px 15px;
+  }
+
+  .iconList {
+    gap: 5px;
+  }
 }

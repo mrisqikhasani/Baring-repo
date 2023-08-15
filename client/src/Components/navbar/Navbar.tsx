@@ -1,14 +1,37 @@
-import Search from "@mui/icons-material/Search";
-import Notifications from "@mui/icons-material/Notifications";
-import Account from "@mui/icons-material/AccountCircle";
-import Container from '@mui/material/Container';
+import React, { useState } from "react";
+import { Notifications, AccountCircle, Search } from "@mui/icons-material";
+import { Container, Menu, MenuItem } from "@mui/material";
 import "./navbar.scss";
 
 function Navbar() {
+  // handle dropdown
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  // handle animation search
+  const [isSearchActive, setIsSearchActive] = useState(false);
+
+  const handleMenusearch = () => {
+    setIsSearchActive(!isSearchActive);
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Escape') {
+      setIsSearchActive(false);
+    }
+  };
+
   return (
     <div>
       <Container maxWidth="lg">
-      <nav>
+        <nav>
           <a href="/" className="logo">
             Baring
           </a>
@@ -35,28 +58,45 @@ function Navbar() {
             </li>
           </ul>
           <ul className="iconList">
-            <li>
-              <a href="/">
-                <Search sx={{ fontSize: 35 }}  className="iconButton"/>
-              </a>
+            <li className="search-box">
+              <div className="searchButton" onClick={handleMenusearch}>
+                <Search sx={{ fontSize: 35 }} className="iconButton" />
+              </div>
+              <div
+                className={`search-wrapper ${isSearchActive ? 'active' : ''}`}
+              >
+                <input
+                  type="text"
+                  className="search-input"
+                  placeholder="Search"
+                  onKeyDown={handleKeyPress}/>
+              </div>
             </li>
             <li>
-              <a href="/">
-                <Notifications sx={{ fontSize: 35 }} className="iconButton"/>
-              </a>
+              <div>
+                <Notifications sx={{ fontSize: 35 }} className="iconButton" />
+              </div>
             </li>
             <li>
-              <a href="/">
-                <Account sx={{ fontSize: 35 }} className="iconButton"/>
-              </a>
+              <div className="icon-item" onClick={handleMenuOpen}>
+                <AccountCircle sx={{ fontSize: 35 }} className="iconButton" />
+              </div>
+              <Menu
+                className="Menu-icon"
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+              >
+                <MenuItem onClick={() => {}}>Settings</MenuItem>
+                <MenuItem onClick={() => {}}>Logout</MenuItem>
+              </Menu>
             </li>
           </ul>
-      </nav>
+        </nav>
       </Container>
       <div className="line"></div>
       <br />
     </div>
-    
   );
 }
 
