@@ -3,6 +3,14 @@
   text-decoration: none;
 }
 
+.Navbar {
+  transition: background-color 0.3s;
+}
+
+.scrolled {
+  background-color: #212121;
+}
+
 .logo {
   display: flex;
   color: #db0000;
@@ -27,7 +35,8 @@ nav {
   align-items: center;
   padding: 10px 0px;
   // background-color: #212121;
-  background-color: transparent;
+
+  // background-color: transparent;
 }
 
 .navList {
@@ -76,7 +85,6 @@ nav {
   display: none;
 }
 
-
 .search-wrapper.active {
   display: block;
   animation: slideIn 0.3s ease-in-out forwards;
@@ -102,15 +110,13 @@ nav {
 }
 
 .search-input:focus {
-  width: 100%; 
+  width: 100%;
   // outline: ;
 }
 
 .iconButton {
   cursor: pointer;
 }
-
-
 
 .line {
   width: 100%;
