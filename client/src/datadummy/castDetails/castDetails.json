@@ -1,0 +1,50 @@
+[
+    {
+        "id_movie":9,
+        "name": "Kim You-jung",
+        "character":"Na Bo-ra",
+        "imageUrl": "Cast/cast1.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Byeon Woo-seok",
+        "character":"Poong Woon-ho",
+        "imageUrl": "Cast/cast2.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Park Jung-woo",
+        "character":"Baek Hyun-jin",
+        "imageUrl": "Cast/cast3.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Roh Yoon-seo",
+        "character":"Kim Yeon-du",
+        "imageUrl": "Cast/cast4.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Kim Sung-kyung",
+        "character":"Bo-ra's Mother",
+        "imageUrl": "Cast/cast5.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Jeong Seok-yong",
+        "character":"Bo-ra's Father",
+        "imageUrl": "Cast/cast6.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Yoon Yi-reh",
+        "character":"Madam",
+        "imageUrl": "Cast/cast7.png"
+    },
+    {
+        "id_movie":9,
+        "name": "Jeon Hye-won",
+        "character":"Darn It",
+        "imageUrl": "Cast/cast8.png"
+    }
+]
