@@ -4,6 +4,7 @@ import Footer from "../../Components/footer/Footer";
 import SectionMovie from "../../Components/SectionMovie/SectionMovie";
 import HeroDetail from "../../Components/heroDetails/HeroDetail";
 import CastDetails from "../../Components/castDetails/CastDetails";
+import MediaDetails from "../../Components/mediaDetails/MediaDetails";
 import movieDataDrakor from "../../datadummy/seriesdrakor/seriesDrakor.json";
 import moviesDataFilm from "../../datadummy/film/film.json";
 import moviesDataSeries from "../../datadummy/series/series.json";
@@ -38,6 +39,7 @@ export default function DetailsPage() {
       <HeroDetail/>
       <Navbar />
       <CastDetails/>
+      <MediaDetails />
       <SectionMovie
         title="More Like This"
         isCarousel={false}
