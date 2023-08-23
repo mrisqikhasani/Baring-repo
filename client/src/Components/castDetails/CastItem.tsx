@@ -1,7 +1,15 @@
 import React from "react";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 
-export default function CastItem({ castdata }: { castdata: any }) {
+export default function CastItem({
+  name,
+  character,
+  imageUrl,
+}: {
+  name?: string;
+  character?: string;
+  imageUrl?: string;
+}) {
   return (
     <div className="castItem" style={{ padding: "12px" }}>
       <Card
@@ -18,30 +26,53 @@ export default function CastItem({ castdata }: { castdata: any }) {
           },
           "@media (max-width: 321px)": {
             height: 300,
-            width:200
+            width: 200,
           },
         }}
       >
-        <CardMedia
+        {imageUrl ? (
+          <CardMedia
           sx={{
-            height: 175,
-            width: 138,
-            "@media (max-width: 770px)": {
-              height: 200,
-              width:155
-            },
-            "@media (max-width: 426px)": {
-              height: 200,
-              width:175
-            },
-            "@media (max-width: 321px)": {
-              height: 200,
-              width:200
-            },
-          }}
-          image={require(`../../Assets/Details/${castdata.imageUrl}`)}
-          title="cast1"
-        />
+              height: 175,
+              width: 138,
+              "@media (max-width: 770px)": {
+                height: 200,
+                width: 155,
+              },
+              "@media (max-width: 426px)": {
+                height: 200,
+                width: 175,
+              },
+              "@media (max-width: 321px)": {
+                height: 200,
+                width: 200,
+              },
+            }}
+            image={require(`../../Assets/${imageUrl}`)}
+            title="cast1" 
+          />
+        ) :(<CardMedia
+          sx={{
+              height: 175,
+              width: 138,
+              "@media (max-width: 770px)": {
+                height: 200,
+                width: 155,
+              },
+              "@media (max-width: 426px)": {
+                height: 200,
+                width: 175,
+              },
+              "@media (max-width: 321px)": {
+                height: 200,
+                width: 200,
+              },
+            }}
+            image={require('./nonProfile.png')}
+            title="cast1" 
+          />)
+        
+        }
         <CardContent>
           <Typography
             component="div"
@@ -52,7 +83,7 @@ export default function CastItem({ castdata }: { castdata: any }) {
               color: "#DB0000",
             }}
           >
-            {castdata.name}
+            {name}
           </Typography>
           <Typography
             style={{
@@ -62,8 +93,8 @@ export default function CastItem({ castdata }: { castdata: any }) {
               color: "#FFF",
               marginTop: "5px",
             }}
-          >
-            {castdata.character}
+            >
+            {character}
           </Typography>
         </CardContent>
       </Card>

@@ -42,42 +42,42 @@
       {
         "name": "Kim yoo-jung",
         "character": "Na bo-ra",
-        "image": "Details/Cast/cast1.png"
+        "imageUrl": "Details/Cast/cast1.png"
       },
       {
         "name": "Byeon Woo-seok",
         "character": "Poong Woon-ho",
-        "image": "Details/Cast/cast2.png"
+        "imageUrl": "Details/Cast/cast2.png"
       },
       {
         "name": "Park Jung-woo",
         "character": "Baek Hyun-jin",
-        "image": "Details/Cast/cast3.png"
+        "imageUrl": "Details/Cast/cast3.png"
       },
       {
         "name": "Roh Yoon-seo",
         "character": "Kim Yeon-du",
-        "image": "Details/Cast/cast4.png"
+        "imageUrl": "Details/Cast/cast4.png"
       },
       {
         "name": "Kim Sung-kyung",
         "character": "Bo-ra's Mother",
-        "image": "Details/Cast/cast5.png"
+        "imageUrl": "Details/Cast/cast5.png"
       },
       {
         "name": "Jeong Seok-yong",
         "character": "Bo-ra's Father",
-        "image": "Details/Cast/cast6.png"
+        "imageUrl": "Details/Cast/cast6.png"
       },
       {
         "name": "Yoon Yi-reh",
         "character": "Madam",
-        "image": "Details/Cast/cast7.png"
+        "imageUrl": "Details/Cast/cast7.png"
       },
       {
         "name": "Jeon Hye-won",
         "character": "Darn It",
-        "image": "Details/Cast/cast8.png"
+        "imageUrl": "Details/Cast/cast8.png"
       }
     ],
     "image": {

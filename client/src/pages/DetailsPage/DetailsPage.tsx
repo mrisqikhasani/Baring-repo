@@ -36,10 +36,10 @@ export default function DetailsPage() {
 
   return (
     <div className="DetailsPage">
-      <HeroDetail/>
+      <HeroDetail moviesdata={selectedMovies}/>
       <Navbar />
-      <CastDetails/>
-      <MediaDetails />
+      <CastDetails moviesdata={selectedMovies}/>
+      <MediaDetails moviesdata={selectedMovies}/>
       <SectionMovie
         title="More Like This"
         isCarousel={false}

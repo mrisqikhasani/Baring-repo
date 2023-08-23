@@ -2,14 +2,12 @@ import React from "react";
 import "./heroDetail.scss";
 import detailMovieData from "../../datadummy/film/film.json";
 
-const moviesdata = detailMovieData.find((item) => item.id === 9);
-
-export default function HeroDetail() {
+export default function HeroDetail({ moviesdata }: { moviesdata: any }) {
   return (
     <div className="HeroDetails">
       <div className="imageWrapper">
         <div className="imageBackgroud">
-          {moviesdata?.image?.backdrop[0] ? (
+          {moviesdata?.image?.backdrop.length > 0 ? (
             <img
               src={require(`../../Assets/${moviesdata.image.backdrop[2]}`)}
               alt="background"
@@ -20,8 +18,8 @@ export default function HeroDetail() {
               className="wideBackground"
               style={{
                 width: "100%",
-                height:"650px",
-                backgroundColor: "white"
+                height: "650px",
+                backgroundColor: "white",
               }}
             ></div>
           )}
@@ -40,7 +38,12 @@ export default function HeroDetail() {
               />
             </div>
           ) : (
-            <div className="anotherBackground"></div>
+            <div className="anotherBackground">
+              <div
+                className="mobileBackground1"
+                style={{ width: "100%", height: "800px" , backgroundColor:"white"}}
+              ></div>
+            </div>
           )}
 
           <div className="addBackground"></div>
@@ -76,7 +79,7 @@ export default function HeroDetail() {
             {moviesdata?.overview}
           </p>
           <p className="genre mt-5 md:text-sm max-[426px]:text-xs max-[426px]:mt-0.5">
-            {moviesdata?.genre?.join(', ')}
+            {moviesdata?.genre?.join(", ")}
           </p>
         </div>
       </div>

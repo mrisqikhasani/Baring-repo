@@ -11,8 +11,27 @@
   flex: 1;
   transition: transform 0.3s;
 }
-
 .mediaBackdrop img:hover {
+  transform: scale(1.1);
+}
+
+.backdropSectionSkeleton {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.backdropSectionSkeleton > .mediaBackdropSkeleton {
+  width: 400px;
+  height: 242px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backdropSectionSkeleton > .mediaBackdropSkeleton:hover {
   transform: scale(1.1);
 }
 
@@ -30,7 +49,6 @@
   margin-bottom: 20px; /* Jarak vertikal antara poster */
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -38,6 +56,31 @@
 }
 
 .posters img:hover {
+  transform: scale(1.1);
+}
+
+.posterSectionSkeleton {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.posterSectionSkeleton .postersSkeleton {
+  width: 220px;
+  height: 330px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s;
+}
+
+.posterSectionSkeleton .postersSkeleton:hover {
   transform: scale(1.1);
 }
 

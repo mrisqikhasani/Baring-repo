@@ -1,66 +1,85 @@
 import React from "react";
 import { Container } from "@mui/material";
+import detailMovieData from "../../datadummy/film/film.json";
 import "./mediaDetails.scss";
 
-export default function MediaDetails() {
+export default function MediaDetails({ moviesdata }: { moviesdata: any }) {
   return (
     <div className="MediaDetails">
       <Container maxWidth="xl">
         <div className="title-section">
           <h2 className="text-white ">Media</h2>
         </div>
-        <div className="backdropSection">
-          <div className="mediaBackdrop">
+        {moviesdata?.image?.backdrop.length > 0 ? (
+          <div className="backdropSection">
+            <div className="mediaBackdrop">
+              <img
+                src={require(`../../Assets/${moviesdata?.image?.backdrop[0]}`)}
+                alt="media"
+              />
+            </div>
+            <div className="mediaBackdrop">
+              <img
+                src={require(`../../Assets/${moviesdata?.image?.backdrop[1]}`)}
+                alt="media"
+              />
+            </div>
+            <div className="mediaBackdrop">
+              <img
+                src={require(`../../Assets/${moviesdata?.image?.backdrop[2]}`)}
+                alt="media"
+              />
+            </div>
+          </div>
+        ) : (
+          <div className="backdropSectionSkeleton">
+            <div className="mediaBackdropSkeleton"><p>NOT FOUND</p></div>
+            <div className="mediaBackdropSkeleton"><p>NOT FOUND</p></div>
+            <div className="mediaBackdropSkeleton"><p>NOT FOUND</p></div>
+          </div>
+        )}
+        {moviesdata?.image?.poster.length > 0 ?(
+          <div className="posterSection">
+          <div className="posters">
             <img
-              src={require("../../Assets/Details/media/media1.png")}
+              src={require(`../../Assets/${moviesdata?.image?.poster[0]}`)}
               alt="media"
             />
           </div>
-          <div className="mediaBackdrop">
+          <div className="posters">
             <img
-              src={require("../../Assets/Details/media/media2.png")}
+              src={require(`../../Assets/${moviesdata?.image?.poster[1]}`)}
               alt="media"
             />
           </div>
-          <div className="mediaBackdrop">
+          <div className="posters">
             <img
-              src={require("../../Assets/Details/media/media3.jpg")}
+              src={require(`../../Assets/${moviesdata?.image?.poster[2]}`)}
+              alt="media"
+            />
+          </div>
+          <div className="posters">
+            <img
+              src={require(`../../Assets/${moviesdata?.image?.poster[3]}`)}
+              alt="media"
+            />
+          </div>
+          <div className="posters">
+            <img
+              src={require(`../../Assets/${moviesdata?.image?.poster[4]}`)}
               alt="media"
             />
           </div>
         </div>
-        <div className="posterSection">
-          <div className="posters">
-            <img
-              src={require("../../Assets/Details/media/Poster 1.png")}
-              alt="media"
-            />
+        ):(
+          <div className="posterSectionSkeleton">
+            <div className="postersSkeleton"><p>NOT FOUND</p></div>
+            <div className="postersSkeleton"><p>NOT FOUND</p></div>
+            <div className="postersSkeleton"><p>NOT FOUND</p></div>
+            <div className="postersSkeleton"><p>NOT FOUND</p></div>
+            <div className="postersSkeleton"><p>NOT FOUND</p></div>
           </div>
-          <div className="posters">
-            <img
-              src={require("../../Assets/Details/media/Poster 2.png")}
-              alt="media"
-            />
-          </div>
-          <div className="posters">
-            <img
-              src={require("../../Assets/Details/media/Poster 3.png")}
-              alt="media"
-            />
-          </div>
-          <div className="posters">
-            <img
-              src={require("../../Assets/Details/media/Poster 4.png")}
-              alt="media"
-            />
-          </div>
-          <div className="posters">
-            <img
-              src={require("../../Assets/Details/media/Poster 5.png")}
-              alt="media"
-            />
-          </div>
-        </div>
+        )}
       </Container>
       <div className="line"></div>
     </div>
