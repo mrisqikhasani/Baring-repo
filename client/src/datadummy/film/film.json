@@ -4,41 +4,102 @@
     "movie_title": "Mavka: The Forest Song",
     "year": "2023",
     "imageUrl": "Film/film1.png",
-    "isSeries":0
+    "isSeries": 0
   },
   {
     "id": 6,
     "movie_title": "The Roundup: No WayOut",
     "year": "2023",
     "imageUrl": "Film/film2.png",
-    "isSeries":0
+    "isSeries": 0
   },
   {
     "id": 7,
     "movie_title": "Kingdom 3: The Flame of Fate",
     "year": "2023",
     "imageUrl": "Film/film3.png",
-    "isSeries":0
+    "isSeries": 0
   },
   {
     "id": 8,
     "movie_title": "Suzume",
     "year": "2022",
     "imageUrl": "Film/film4.png",
-    "isSeries":0
+    "isSeries": 0
   },
   {
     "id": 9,
     "movie_title": "20th Century Girl",
+    "overview": "Yeon-du asks her best friend Bora to collect all the information she can about Baek Hyun-jin while she is away in the U.S. for heart surgery. Bora decides to get close to Baek's best friend, Pung Woon-ho first. However, Bora's clumsy plan unfolds in an unexpected direction. In 1999, a year before the new century, Bora, who turns seventeen, falls into the fever of first love.",
     "year": "2022",
+    "date": "10/06/2022",
     "imageUrl": "Film/film5.png",
-    "isSeries":0
+    "isSeries": 0,
+    "country": "South Korean",
+    "duration": "1h59m",
+    "genre": ["Romance", "Drama"],
+    "cast": [
+      {
+        "name": "Kim yoo-jung",
+        "character": "Na bo-ra",
+        "image": "Details/Cast/cast1.png"
+      },
+      {
+        "name": "Byeon Woo-seok",
+        "character": "Poong Woon-ho",
+        "image": "Details/Cast/cast2.png"
+      },
+      {
+        "name": "Park Jung-woo",
+        "character": "Baek Hyun-jin",
+        "image": "Details/Cast/cast3.png"
+      },
+      {
+        "name": "Roh Yoon-seo",
+        "character": "Kim Yeon-du",
+        "image": "Details/Cast/cast4.png"
+      },
+      {
+        "name": "Kim Sung-kyung",
+        "character": "Bo-ra's Mother",
+        "image": "Details/Cast/cast5.png"
+      },
+      {
+        "name": "Jeong Seok-yong",
+        "character": "Bo-ra's Father",
+        "image": "Details/Cast/cast6.png"
+      },
+      {
+        "name": "Yoon Yi-reh",
+        "character": "Madam",
+        "image": "Details/Cast/cast7.png"
+      },
+      {
+        "name": "Jeon Hye-won",
+        "character": "Darn It",
+        "image": "Details/Cast/cast8.png"
+      }
+    ],
+    "image": {
+      "backdrop": [
+        "Details/media/media1.png",
+        "Details/media/media2.png",
+        "Details/media/media3.jpg"
+      ],
+      "poster": [
+        "Details/media/Poster 1.png",
+        "Details/media/Poster 2.png",
+        "Details/media/Poster 3.png",
+        "Details/media/Poster 4.png",
+        "Details/media/Poster 5.png"
+      ]
+    }
   },
   {
     "id": 10,
     "movie_title": "Your Name",
     "year": "2016",
     "imageUrl": "Film/film6.png",
-    "isSeries":0
+    "isSeries": 0
   }
 ]

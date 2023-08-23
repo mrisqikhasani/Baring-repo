@@ -22,7 +22,7 @@ export default function CastDetails() {
         </div>
         <div className="castSection">
           <AliceCarousel
-            mouseTracking
+            
             disableDotsControls
             responsive={responsive}
           >

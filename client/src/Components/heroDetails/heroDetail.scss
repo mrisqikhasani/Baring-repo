@@ -8,7 +8,7 @@
   width: 100%;
 }
 
-.wideBackround {
+.wideBackground {
   width: 100%;
   height: auto;
 }
@@ -30,6 +30,8 @@
   position: absolute;
   top: 140px;
   left: 128px;
+  width: 298;
+  height: 422px;
 }
 
 .textDetails {
@@ -114,13 +116,14 @@
     margin-top: 5px;
   }
 
-  .wideBackround {
+  .wideBackground {
     display: none;
     // filter: blur(4px);
   }
 
   .mobileBackground {
     display: flex;
+    width: 100%;
     // filter: blur(4px);
   }
 }

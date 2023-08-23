@@ -61,7 +61,7 @@ const SectionMovie: React.FC<SectionMovierops> = ({
             controlsStrategy="alternate"
           >
             {moviesdata.map((movieitem) => (
-              <div>
+              <div className="mt-5">
                 <MovieItem moviesdata={movieitem} />
               </div>
             ))}

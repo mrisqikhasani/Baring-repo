@@ -1,50 +1,71 @@
 import React from "react";
 import "./heroDetail.scss";
+import detailMovieData from "../../datadummy/film/film.json";
+
+const moviesdata = detailMovieData.find((item) => item.id === 9);
 
 export default function HeroDetail() {
   return (
     <div className="HeroDetails">
       <div className="imageWrapper">
         <div className="imageBackgroud">
-          <img
-            src={require("../../Assets/Details/background.jpg")}
-            alt="background"
-            className="wideBackround"
-          />
-          <img
-            src={require("../../Assets/Details/mobileBackground.jpg")}
-            alt="background"
-            className="mobileBackground"
-          />
-          <img
-            src={require("../../Assets/Details/mobileBackground.jpg")}
-            alt="background"
-            className="smallMobileBackground"
-          />
+          {moviesdata?.image?.backdrop[0] ? (
+            <img
+              src={require(`../../Assets/${moviesdata.image.backdrop[2]}`)}
+              alt="background"
+              className="wideBackground"
+            />
+          ) : (
+            <div
+              className="wideBackground"
+              style={{
+                width: "100%",
+                height:"650px",
+                backgroundColor: "white"
+              }}
+            ></div>
+          )}
+
+          {moviesdata?.image?.poster ? (
+            <div className="anotherBackground">
+              <img
+                src={require(`../../Assets/${moviesdata.image.poster[1]}`)}
+                alt="background"
+                className="mobileBackground"
+              />
+              <img
+                src={require(`../../Assets/${moviesdata.image.poster[1]}`)}
+                alt="background"
+                className="smallMobileBackground"
+              />
+            </div>
+          ) : (
+            <div className="anotherBackground"></div>
+          )}
+
           <div className="addBackground"></div>
           <div className="overlayDetails"></div>
         </div>
       </div>
       <div className="posterDetails">
         <img
-          src={require("../../Assets/Details/PosterDetails.png")}
+          src={require(`../../Assets/${moviesdata?.imageUrl}`)}
           alt="poster"
         />
       </div>
       <div className="textDetails">
         <h2 className=" text-white font-medium text-3xl">
-          20th Century Girl
+          {moviesdata?.movie_title}
           <span className="font-normal text-2xl ml-0.5 text-slate-50 max-[426px]:text-base">
-            {" "}
-            (2022)
+            {` (${moviesdata?.year})`}
           </span>
         </h2>
         <div className="text-wrapper-details">
           <ul className="list-wrapper-details max-[426px]:text-xs">
-            <li>10/06/2022</li>
-            <li>Movie</li>
-            <li>1h59m</li>
-            <li>Korea</li>
+            <li>{moviesdata?.date}</li>
+            <li>{moviesdata?.isSeries === 0 ? <p>Movie</p> : <p>Series</p>}</li>
+            <li>{moviesdata?.duration}</li>
+            <li>{moviesdata?.country}</li>
           </ul>
         </div>
         <div className="overview text-white mt-7 max-[426px]:mt-1">
@@ -52,15 +73,10 @@ export default function HeroDetail() {
             Overview
           </h3>
           <p className="font-light text-base mt-2.5 mr-2.5 md:text-sm max-[426px]:mr-px max-[426px]:text-xs">
-            Yeon-du asks her best friend Bora to collect all the information she
-            can about Baek Hyun-jin while she is away in the U.S. for heart
-            surgery. Bora decides to get close to Baek's best friend, Pung
-            Woon-ho first. However, Bora's clumsy plan unfolds in an unexpected
-            direction. In 1999, a year before the new century, Bora, who turns
-            seventeen, falls into the fever of first love.
+            {moviesdata?.overview}
           </p>
           <p className="genre mt-5 md:text-sm max-[426px]:text-xs max-[426px]:mt-0.5">
-            Romance, Drama
+            {moviesdata?.genre?.join(', ')}
           </p>
         </div>
       </div>
