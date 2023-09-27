@@ -33,7 +33,7 @@ const SectionMovie: React.FC<SectionMovierops> = ({
     0: { items: 1 },
     425: { items: 2 },
     568: { items: 3 },
-    1024: { items: 5 },
+    1024: { items: 6 },
     1440: { items: 6 },
   };
 
@@ -60,17 +60,17 @@ const SectionMovie: React.FC<SectionMovierops> = ({
             infinite
             controlsStrategy="alternate"
           >
-            {moviesdata.map((movieitem) => (
+            {moviesdata.map((movieitem, index) => (
               <div className="mt-5">
-                <MovieItem moviesdata={movieitem} />
+                <MovieItem moviesdata={movieitem} key={index}/>
               </div>
             ))}
           </AliceCarousel>
         ) : (
-          <Grid container spacing={1} columns={12} className="movie-grid">
-            {moviesdata.map((movieitem) => (
-              <Grid item>
-                <MovieItem moviesdata={movieitem} />
+          <Grid container spacing={2} columns={12} className="movie-grid">
+            {moviesdata.map((movieitem, index) => (
+              <Grid item key={index}>
+                <MovieItem moviesdata={movieitem} key={index}/>
               </Grid>
             ))}
           </Grid>

@@ -40,7 +40,7 @@ export default function HeroDetail({ moviesdata }: { moviesdata: any }) {
           ) : (
             <div className="anotherBackground">
               <div
-                className="mobileBackground1"
+                className="mobileBackground"
                 style={{ width: "100%", height: "800px" , backgroundColor:"white"}}
               ></div>
             </div>

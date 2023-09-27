@@ -29,6 +29,7 @@ export default function Listpage() {
   return (
     <div className="ListPage">
       <Navbar />
+      <br />
       <SectionMovie
         title="Series"
         isCarousel={false}

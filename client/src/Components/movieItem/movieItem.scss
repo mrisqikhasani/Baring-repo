@@ -1,8 +1,8 @@
 .box-item {
     border: 0px none;
-    height: 380px;
+    height: 381px;
     position: relative;
-    width: 194px;
+    width: 225px;
     margin-left: 13px;
     transition: transform 0.3s;
 }
@@ -14,6 +14,8 @@
 .box-item .poster {
     left: 0;
     top: 0;
+    height: 287px;
+    width: 205px;
   }
 
 .box-item .overplap-poster {
@@ -65,7 +67,7 @@
 .title-poster h3{
     color: #ffffff;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
     height: 22px;
     letter-spacing: 0;
     line-height: normal;
@@ -79,9 +81,9 @@
 
 .title-poster p{
     display: flex;
-    color:#ffffff;
-    font-size: 17px;
-    font-weight: 500;
+    color:#7a7a7a;
+    font-size: 15px;
+    font-weight: 400;
     height: 15px;
     left: 0;
     letter-spacing: 0;

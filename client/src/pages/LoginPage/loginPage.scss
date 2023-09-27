@@ -1,0 +1,83 @@
+.loginPage{
+    padding-left: 118px;
+    width: 407px;
+}
+
+.loginSection {
+  align-items: center;
+  text-align: center;
+}
+
+.headerSection__login {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.titleSection__login {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+// .sectionLogin {
+//     display: ;
+// }
+
+.sectionLogin label {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.sectionLogin input {
+  background-color: #555555;
+  border-radius: 15px;
+  border-color: black;
+  height: 45px;
+  margin-bottom: 30px;
+  width: 360px;
+  height: 45px;
+  padding: 13px;
+}
+
+.forgotPassword {
+  color: #ffffffb2;
+  // display: block;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.sectionLogin button {
+  border-radius: 15px;
+  background: rgba(219, 0, 0, 0.8);
+  box-shadow: 1px 7px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fff;
+  font-family: Fredoka;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 360px;
+  height: 45px;
+}
+
+.signup {
+    margin-top: 55px;
+  color: rgba(255, 255, 255, 0.7);
+  font-family: Fredoka;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+
+.signup span {
+  color: #fff;
+  font-family: Fredoka;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  cursor: pointer;
+}

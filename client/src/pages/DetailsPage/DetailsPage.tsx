@@ -1,3 +1,5 @@
+
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "../../Components/navbar/Navbar";
 import Footer from "../../Components/footer/Footer";
@@ -11,43 +13,75 @@ import moviesDataSeries from "../../datadummy/series/series.json";
 import movieDataAnime from "../../datadummy/seriesanime/seriesAnime.json";
 import "./DetailsPage.scss";
 
+const moviesData: MovieData[] = [
+  ...moviesDataFilm,
+  ...moviesDataSeries,
+  ...movieDataAnime,
+  ...movieDataDrakor,
+];
+
+interface Cast {
+  name: string;
+  character: string;
+  imageUrl: string;
+}
+
+interface ImageData {
+  backdrop: string[];
+  poster: string[];
+}
+
+interface MovieData {
+  id: number;
+  movie_title?: string;
+  overview?: string;
+  year?: string;
+  date?: string;
+  imageUrl?: string;
+  isSeries?: number;
+  country?: string;
+  duration?: string;
+  genre?: string[];
+  cast?: Cast[];
+  image?: ImageData;
+}
+
 export default function DetailsPage() {
   const { id } = useParams();
+  const [selectedMovies, setSelectedMovies] = useState<MovieData | undefined>(
+    undefined
+  );
 
-  const moviesData: MovieData[] = [
-    ...moviesDataFilm,
-    ...moviesDataSeries,
-    ...movieDataAnime,
-    ...movieDataDrakor,
-  ];
+  useEffect(() => {
+    window.scroll(0,0)
+    const findMovie = moviesData.find((movie) => movie.id === Number(id));
 
-  interface MovieData {
-    id: number;
-    movie_title: string;
-    year: string;
-    imageUrl: string;
-    isSeries: number;
-  }
+    if (findMovie) {
+      setSelectedMovies(findMovie);
+    }
+  }, [id]);
 
-  const selectedMovies = moviesData.find((movie) => movie.id === Number(id));
-  if (!selectedMovies) {
-    return <div>tidak ketemu</div>;
-  }
 
   return (
     <div className="DetailsPage">
-      <HeroDetail moviesdata={selectedMovies}/>
-      <Navbar />
-      <CastDetails moviesdata={selectedMovies}/>
-      <MediaDetails moviesdata={selectedMovies}/>
-      <SectionMovie
-        title="More Like This"
-        isCarousel={false}
-        seeMore={false}
-        moviesdata={movieDataDrakor}
-        showButtonline={true}
-      />
-      <Footer />
+      {selectedMovies ? (
+        <div className="">
+          <HeroDetail moviesdata={selectedMovies} />
+          <Navbar />
+          <CastDetails moviesdata={selectedMovies} key={id}/>
+          <MediaDetails moviesdata={selectedMovies} />
+          <SectionMovie
+            title="More Like This"
+            isCarousel={false}
+            seeMore={false}
+            moviesdata={movieDataDrakor}
+            showButtonline={true}
+          />
+          <Footer key={3}/>
+        </div>
+      ) : (
+        <div>Tidak ditemukan</div>
+      )}
     </div>
   );
 }

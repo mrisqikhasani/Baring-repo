@@ -23,15 +23,15 @@ function Footer() {
             <div className="list flex mt-7">
               <div className="list-group-1 flex-1">
                 <ul>
-                    {group1.map((item1)=>(
-                        <li className="text-white mb-5">{item1}</li>
+                    {group1.map((item1, index)=>(
+                        <li className="text-white mb-5" key={index}>{item1}</li>
                     ))}
                 </ul>
               </div>
               <div className="list-group-2 flex-1">
                 <ul>
-                    {group2.map((item2) => (
-                        <li className="text-white mb-5">{item2}</li>
+                    {group2.map((item2, index) => (
+                        <li className="text-white mb-5" key={index}>{item2}</li>
                     ))}
                 </ul>
               </div>

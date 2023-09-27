@@ -35,15 +35,16 @@ export default function CastDetails({ moviesdata }: { moviesdata: any }) {
         <div className="castSection">
           <AliceCarousel disableDotsControls responsive={responsive}>
             {moviesdata?.cast?.length > 0
-              ? moviesdata.cast.map((cast: any) => (
+              ? moviesdata.cast.map((cast: any, index:any) => (
                   <CastItem
+                    key={index}
                     name={cast.name}
                     character={cast.character}
                     imageUrl={cast.imageUrl}
                   />
                 ))
-              : unknowData.map((unknowdata: any) => (
-                  <CastItem name={unknowdata} character={unknowdata} />
+              : unknowData.map((unknowdata: any, index) => (
+                  <CastItem name={unknowdata} character={unknowdata} key={index}/>
                 ))}
           </AliceCarousel>
         </div>
