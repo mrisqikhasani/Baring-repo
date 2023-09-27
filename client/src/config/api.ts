@@ -1,8 +1,4 @@
 import axios from "axios";
-// const axios = require('axios');
-// import dotenv from 'dotenv';
-
-// require('dotenv').config();
 
 
 const fetchAPI = async () => {
@@ -11,7 +7,7 @@ const fetchAPI = async () => {
   const headers = {
     accept: "application/json",
     Authorization:
-      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMDlmMzEzNzI1NTY1MDlmMmVmYjMzNGUwNmFkODYwNSIsInN1YiI6IjYxMWE2NDJjOWYwZTE5MDA1YzM5MjVmMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.-BwNEf3hU0IFiaSz9xPYNVeDNuTnvHj-2JeJ64YxG5o',
+      `Bearer ${process.env.API_KEY}`,
   };
 
   try {
